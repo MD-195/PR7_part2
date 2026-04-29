@@ -25,7 +25,7 @@ namespace BilaineCipherApp
             try
             {
                 string text = txtInput.Text;
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrWhiteSpace(text))
                 {
                     ShowError("Введите текст для шифрования");
                     return;
@@ -52,7 +52,7 @@ namespace BilaineCipherApp
             try
             {
                 string cipherText = txtInput.Text;
-                if (string.IsNullOrEmpty(cipherText))
+                if (string.IsNullOrWhiteSpace(cipherText))
                 {
                     ShowError("Введите текст для расшифрования");
                     return;

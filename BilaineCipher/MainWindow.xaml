@@ -18,7 +18,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Text="Шифр Рельсовой Изгороди (Rail Fence Cipher)" 
+        <TextBlock Grid.Row="0" Text="Шифр Билайна" 
                    FontSize="18" FontWeight="Bold" TextAlignment="Center" 
                    Margin="0,0,0,15" HorizontalAlignment="Center"/>
 
