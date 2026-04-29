@@ -1,12 +1,54 @@
-﻿<Window x:Class="BilaineCipher.MainWindow"
+﻿<Window x:Class="BilaineCipherApp.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:BilaineCipher"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Шифр Билайна (Rail Fence Cipher)" 
+        Height="500" Width="650"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanResize">
+
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Шифр Рельсовой Изгороди (Rail Fence Cipher)" 
+                   FontSize="18" FontWeight="Bold" TextAlignment="Center" 
+                   Margin="0,0,0,15" HorizontalAlignment="Center"/>
+
+        <Label Grid.Row="1" Content="Исходный текст:" FontWeight="Bold" Margin="0,5"/>
+        <TextBox Grid.Row="2" x:Name="txtInput" Height="100" TextWrapping="Wrap" 
+                 AcceptsReturn="True" VerticalScrollBarVisibility="Auto"
+                 ToolTip="Введите текст для шифрования или расшифрования"/>
+
+        <Label Grid.Row="3" Content="Количество рельсов (2-10):" FontWeight="Bold" Margin="0,10,0,5"/>
+        <StackPanel Grid.Row="4" Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBox x:Name="txtRails" Width="60" Text="3" MaxLength="2"
+                     ToolTip="Количество строк для зигзагообразного распределения"/>
+            <Button x:Name="btnEncrypt" Content="Зашифровать" Width="120" Margin="10,0" 
+                    Click="BtnEncrypt_Click" Background="LightGreen"/>
+            <Button x:Name="btnDecrypt" Content="Расшифровать" Width="120" 
+                    Click="BtnDecrypt_Click" Background="LightBlue"/>
+            <Button x:Name="btnClear" Content="Очистить" Width="100" Margin="10,0"
+                    Click="BtnClear_Click"/>
+        </StackPanel>
+
+        <Label Grid.Row="5" Content="Результат:" FontWeight="Bold" Margin="0,5"/>
+        <TextBox Grid.Row="6" x:Name="txtResult" Height="100" TextWrapping="Wrap" 
+                 IsReadOnly="True" Background="#F0F0F0"
+                 VerticalScrollBarVisibility="Auto"
+                 ToolTip="Результат операции (только для чтения)"/>
+
+        <StatusBar Grid.Row="7" Margin="0,10,0,0">
+            <StatusBarItem x:Name="statusMessage">
+                <TextBlock Text="Готов к работе" Foreground="Gray"/>
+            </StatusBarItem>
+        </StatusBar>
     </Grid>
 </Window>
