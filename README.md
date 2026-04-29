@@ -80,3 +80,7 @@ rectangle "Шифр Билайна (Двухлинейный)" {
 | TC09 | GUI: пустой текст при нажатии Encrypt | text="", rows=3 | сообщение об ошибке | | |
 | TC10 | GUI: некорректные строки | rows=0 | сообщение об ошибке | | |
 
+---
+*Результат автоматизированных тестов*
+<img width="2879" height="1323" alt="image" src="https://github.com/user-attachments/assets/c0511df6-fa38-4bc7-a9d0-5f94ba2779fc" />
+
